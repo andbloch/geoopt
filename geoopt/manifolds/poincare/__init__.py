@@ -93,7 +93,7 @@ class PoincareBall(Manifold):
     def norm(
         self, x: torch.Tensor, u: torch.Tensor, *, keepdim=False, dim=-1
     ) -> torch.Tensor:
-        return math.norm(x, u, keepdim=keepdim, dim=dim)
+        return math.norm(x, u, c=self.c, keepdim=keepdim, dim=dim)
 
     def expmap(
         self, x: torch.Tensor, u: torch.Tensor, *, project=True, dim=-1
